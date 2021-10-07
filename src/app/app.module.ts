@@ -13,8 +13,8 @@ import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { HomeComponent } from './home/home.component';
-import { entityConfig } from './entity-metadata';
 import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,9 +29,11 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    EntityDataModule.forRoot(entityConfig),
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
+    EntityDataModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
